@@ -1,1 +1,1 @@
-# ferramenta_calculo_enlaces
+# Ferramenta que permita o planejamento e análise de enlaces outdoor em redes sem fio. A ferramenta deve ser capaz de realizar cálculos essenciais para garantir a eficiência das comunicações em ambientes externos
