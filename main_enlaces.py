@@ -98,13 +98,16 @@ def fresnel_zone():
     dao = float(campo8_4.get())
     dbo = float(campo8_5.get())
     resultado = fr.fresnel(distancia, frequencia, dao, dbo)
+
+    primeira_zona = round((resultado * 0.6),2)
+    zona_fresnel.configure(text="Primeira Zona de Fresnel: " + str(primeira_zona) + " m")
     
     Resultado8.configure(text="Resultado: " + str(resultado) + " dBm")
 
 '''Interface'''
 
 # Aba 1 - Shannon
-label1 = tk.Label(aba1, text="Largura de Banda (Hz)")
+label1 = tk.Label(aba1, text="Largura de Banda (KHz)")
 label1.grid(column=0, row=1)
 campo1 = tk.Entry(aba1, validate="key", validatecommand=(validacao, '%P'), width=20)
 campo1.grid(column=1, row=1)
@@ -270,6 +273,9 @@ button8.grid(column=0, row=5)
 
 Resultado8 = tk.Label(aba8, text="Resultado: ")
 Resultado8.grid(column=0, row=7)
+
+zona_fresnel = tk.Label(aba8, text="Primeira Zona de Fresnel até 3Ghz (m): ")
+zona_fresnel.grid(column=0, row=8)
 
 # Iniciando o loop principal
 janela.mainloop()
